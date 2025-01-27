@@ -61,7 +61,7 @@ La base de datos se inicializa automáticamente con los datos de ejemplo aportad
 
 3. Usa las siguientes credenciales:
 
-    - JDBC URL: jdbc:h2:mem:testdb
+    - JDBC URL: jdbc:h2:file:./pruebaBCNCDB
     - Usuario: sa
     - Contraseña: (vacío)
 
