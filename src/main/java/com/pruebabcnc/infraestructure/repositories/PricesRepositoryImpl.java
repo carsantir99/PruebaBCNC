@@ -15,12 +15,11 @@ import com.pruebabcnc.infraestructure.utils.PriceMapper;
 public class PricesRepositoryImpl implements PricesRepository{
 
 	private final JpaPricesRepository jpaPricesRepository;
-	private final PriceMapper priceMapper;
+	private final PriceMapper priceMapper = new PriceMapper();
 	
-	public PricesRepositoryImpl(JpaPricesRepository jpaPricesRepository, PriceMapper priceMapper) {
+	public PricesRepositoryImpl(JpaPricesRepository jpaPricesRepository) {
 		super();
 		this.jpaPricesRepository = jpaPricesRepository;
-		this.priceMapper = priceMapper;
 	}
 
 	@Override
