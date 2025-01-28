@@ -12,7 +12,7 @@ public class GetPriceByProductIdBrandIdAndDateUseCase {
         this.repository = repository;
     }
 
-    public Price execute(Integer productId, Integer brandId, String date) throws DateParserException {
+    public Price getPriceByProductIdBrandIdAndDate(Integer productId, Integer brandId, String date) throws DateParserException {
         return repository.findPriceByProductIdBrandIdAndDate(productId, brandId, CommonUtilities.parseFromString(date, CommonUtilities.YYYY_MM_DD_HH_MM_SS_HYPHEN_SEPARATOR));
     }
 }
