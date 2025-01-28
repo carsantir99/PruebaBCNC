@@ -68,4 +68,5 @@ public class PricesInfraestructureTests {
     	Price price = pricesRepositoryImpl.findPriceByProductIdBrandIdAndDate(35456, 1, LocalDateTime.parse("2020-08-15 00:00:00",formatter));
         assertNull(price);
     }
+    
 }

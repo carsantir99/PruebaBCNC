@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Price.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PruebaBCNC</a> &gt; <a href="index.source.html" class="el_package">com.pruebabcnc.domain.model</a> &gt; <span class="el_source">Price.java</span></div><h1>Price.java</h1><pre class="source lang-java linenums">package com.pruebabcnc.domain.model;
+
+import java.time.LocalDateTime;
+
+public class Price {
+	private Integer brandId;
+	private LocalDateTime startDate;
+	private LocalDateTime endDate;
+	private Integer priceList;
+	private Integer productId;
+	private Integer priority;
+	private Double price;
+	private String currency;
+	
+	
+<span class="nc" id="L16">	public Price() {</span>
+		
+<span class="nc" id="L18">	}</span>
+	
+	public Price(Integer brandId, LocalDateTime startDate, LocalDateTime endDate, Integer priceList, Integer productId,
+<span class="fc" id="L21">			Integer priority, Double price, String currency) {</span>
+<span class="fc" id="L22">		this.brandId = brandId;</span>
+<span class="fc" id="L23">		this.startDate = startDate;</span>
+<span class="fc" id="L24">		this.endDate = endDate;</span>
+<span class="fc" id="L25">		this.priceList = priceList;</span>
+<span class="fc" id="L26">		this.productId = productId;</span>
+<span class="fc" id="L27">		this.priority = priority;</span>
+<span class="fc" id="L28">		this.price = price;</span>
+<span class="fc" id="L29">		this.currency = currency;</span>
+<span class="fc" id="L30">	}</span>
+
+	public Integer getBrandId() {
+<span class="nc" id="L33">		return brandId;</span>
+	}
+	public void setBrandId(Integer brandId) {
+<span class="nc" id="L36">		this.brandId = brandId;</span>
+<span class="nc" id="L37">	}</span>
+	public LocalDateTime getStartDate() {
+<span class="nc" id="L39">		return startDate;</span>
+	}
+	public void setStartDate(LocalDateTime startDate) {
+<span class="nc" id="L42">		this.startDate = startDate;</span>
+<span class="nc" id="L43">	}</span>
+	public LocalDateTime getEndDate() {
+<span class="nc" id="L45">		return endDate;</span>
+	}
+	public void setEndDate(LocalDateTime endDate) {
+<span class="nc" id="L48">		this.endDate = endDate;</span>
+<span class="nc" id="L49">	}</span>
+	public Integer getPriceList() {
+<span class="nc" id="L51">		return priceList;</span>
+	}
+	public void setPriceList(Integer priceList) {
+<span class="nc" id="L54">		this.priceList = priceList;</span>
+<span class="nc" id="L55">	}</span>
+	public Integer getProductId() {
+<span class="fc" id="L57">		return productId;</span>
+	}
+	public void setProductId(Integer productId) {
+<span class="nc" id="L60">		this.productId = productId;</span>
+<span class="nc" id="L61">	}</span>
+	public Integer getPriority() {
+<span class="nc" id="L63">		return priority;</span>
+	}
+	public void setPriority(Integer priority) {
+<span class="nc" id="L66">		this.priority = priority;</span>
+<span class="nc" id="L67">	}</span>
+	public Double getPrice() {
+<span class="nc" id="L69">		return price;</span>
+	}
+	public void setPrice(Double price) {
+<span class="nc" id="L72">		this.price = price;</span>
+<span class="nc" id="L73">	}</span>
+	public String getCurrency() {
+<span class="nc" id="L75">		return currency;</span>
+	}
+	public void setCurrency(String currency) {
+<span class="nc" id="L78">		this.currency = currency;</span>
+<span class="nc" id="L79">	}</span>
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
