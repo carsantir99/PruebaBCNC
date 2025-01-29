@@ -15,7 +15,7 @@ import com.pruebabcnc.infraestructure.entities.PriceEntity;
 import com.pruebabcnc.infraestructure.repositories.interfaces.JpaPricesRepository;
 
 @DataJpaTest
-public class JpaRepositoryTests {
+class JpaRepositoryTests {
     @Autowired
     private JpaPricesRepository jpaPricesRepository;
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -37,11 +37,11 @@ public class JpaRepositoryTests {
     @Test
     void testFindPriceByProductIdBrandIdAndDateFoundInDataBase() {
     	List<PriceEntity> priceEntityFound = jpaPricesRepository.findPriceByProductIdBrandIdAndDate(35455, 1, LocalDateTime.parse("2020-08-15 00:00:00",formatter));
-        assertEquals(priceEntityFound.size(), 1);
+        assertEquals(1,priceEntityFound.size());
     }
     @Test
     void testFindPriceByProductIdBrandIdAndDateNotFoundInDatabase() {
     	List<PriceEntity> priceEntityFound = jpaPricesRepository.findPriceByProductIdBrandIdAndDate(35456, 1, LocalDateTime.parse("2020-08-15 00:00:00",formatter));
-        assertEquals(priceEntityFound.size(), 0);
+        assertEquals(0,priceEntityFound.size());
     }
 }

@@ -22,7 +22,7 @@ import com.pruebabcnc.infraestructure.repositories.interfaces.JpaPricesRepositor
 import com.pruebabcnc.utils.CommonUtilities;
 
 @SpringBootTest
-public class PricesInfraestructureTests {
+class PricesInfraestructureTests {
 	
 	@Mock
     private JpaPricesRepository jpaPricesRepository;
@@ -57,13 +57,13 @@ public class PricesInfraestructureTests {
 
     	Price price = pricesRepositoryImpl.findPriceByProductIdBrandIdAndDate(35455, 1, LocalDateTime.parse("2020-08-15 00:00:00",formatter));
         assertNotNull(price);
-    	assertEquals(price.getProductId(), priceEntities.get(0).getProductId());
+    	assertEquals(priceEntities.get(0).getProductId(),price.getProductId());
     }
 
     @Test
     void testFindPriceByProductIdBrandIdAndDateNotFound() {
         Mockito.when(jpaPricesRepository.findPriceByProductIdBrandIdAndDate(35456, 1, LocalDateTime.parse("2020-08-15 00:00:00", formatter)))
-        .thenReturn(null);
+        .thenReturn(new ArrayList<PriceEntity>(0));
         
     	Price price = pricesRepositoryImpl.findPriceByProductIdBrandIdAndDate(35456, 1, LocalDateTime.parse("2020-08-15 00:00:00",formatter));
         assertNull(price);

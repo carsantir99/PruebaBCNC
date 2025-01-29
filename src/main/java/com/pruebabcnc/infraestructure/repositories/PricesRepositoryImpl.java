@@ -26,7 +26,7 @@ public class PricesRepositoryImpl implements PricesRepository{
 	public Price findPriceByProductIdBrandIdAndDate(Integer productId, Integer brandId, LocalDateTime date) {
 		List<PriceEntity> pricesEntityList = jpaPricesRepository.findPriceByProductIdBrandIdAndDate(productId, brandId, date);
 		
-		if(null != pricesEntityList) {
+		if(!pricesEntityList.isEmpty()) {
 			return pricesEntityList.stream().findFirst().map(priceMapper::mapEntityToPrice).get();
 		}
 		

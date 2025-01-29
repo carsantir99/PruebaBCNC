@@ -1,68 +1,129 @@
-# Proyecto: Prueba técnica BCNC Group
-El proyecto desarrollado implementa un servicio API REST con el objetivo de obtener el precio final y la tarifa aplicada a determinados productos en función de la fecha en la que se efectúe la consulta. Para el desarrollo de la solución, se han aplicado técnicas de Clean Code para garantizar la calidad y comprensión del código generado y principios SOLID para asegurar la mantenabilidad y escalabilidad del proyecto.
+# BCNC Group Technical Test
+The developed project implements a REST API service to retrieve the final price and applicable rate for specific products based on the query date. Clean Code techniques have been applied to ensure the quality and readability of the generated code, as well as SOLID principles to guarantee the maintainability and scalability of the project.
 
-Las tecnología seleccionada para el desarrollo es el lenguaje Java, concretamente el framework de SpringBoot, utilizando una base de datos en memoria H2 para almacenar datos y todo ello con una arquitectura hexagonal.
+The chosen technology for development is the **Java** programming language, specifically the **Spring Boot** framework, using an in-memory **H2 database** to store data, all structured with a hexagonal architecture.
 
-## Acerca de la gestión del repositorio
+## Repository Management
 
-En la gestión de tareas del repositorio, se ha decidido desarrollar una tarea por cada capa implementada en la solución debido a la simplicidad del código que ha sido desarrollado. En un proyecto real, se realizaría una tarea por funcionalidad implementada, no por capa desarrollada, pero dado que la intencionalidad de la prueba es demostrar la gestión del trabajo realizado y al ser implementada una única funcionalidad, se decidió dividir las tareas por cada capa de la funcionalidad para demostrar cómo se trabaja dentro de un repositorio real.
+For repository task management, it was decided to develop one task per implemented layer due to the simplicity of the developed code. In a real project, tasks would be created per implemented functionality rather than per developed layer. However, since the purpose of this test is to demonstrate work management and only one functionality has been implemented, the tasks were divided by layers of the functionality to showcase the workflow in a real repository.
 
-Sobre la gestión de ramas, se ha desarrollado una rama **main** a partir de la cuál se desplegarán las diferentes releases del proyecto, siendo esta rama la que alberga las versiones finales del producto.
+Regarding branch management, a **main** branch has been created from which different releases of the project will be deployed. This branch contains the final product versions.
 
-A partir de **main** se ha creado una rama **develop** en la que se han integrado cada uno de los desarrollos realizados tras haber sido analizados y verificados en la pull request.
+From **main**, a **develop** branch was created, where all completed developments have been integrated after being analyzed and verified through pull requests.
 
-Por último, de la rama **develop** se han creado diferentes ramas **feature**, en las que se han realizado cada uno de los desarrollos planteados en las tareas del repositorio.
+Finally, from the **develop** branch, multiple feature branches were created, each corresponding to a specific development task.
 
-La forma de actuar ha sido:
+The workflow followed was:
 
-1. Crear rama a partir de **develop** para cada uno de los desarrollos abordados.
-2. Clonar la rama creada en el anterior punto y realización del desarrollo.
-3. Subida de la rama con los cambios desarrollados al repositorio remoto y creación de pull request para mezclar la rama desarrollada de nuevo con **develop**
-4. Análisis del código generado en la rama y verificación del correcto desarrollo implementado.
-5. Confirmación del merge request, uniendo los cambios a la rama **develop**
+1. Creating a new branch from **develop** for each planned development.
+2. Cloning the newly created branch and proceeding with the development.
+3. Pushing the branch with the implemented changes to the remote repository and creating a pull request to merge it back into **develop**.
+4. Reviewing the generated code and verifying the correct implementation.
+5. Approving the merge request, integrating the changes into the **develop** branch.
 
-En este caso, al igual que en la gestión de tareas, se ha decidido crear una rama por cada capa, para simplificar la revisión de los cambios realizados en cada una de las tareas y para demostrar la forma de actuar en un proyecto real. Por ello, se ha decidido no eliminar las ramas **feature** al unir los cambios con **develop**, para que puedan ser revisados los cambios implementados en cada una de ellas.
+Similar to task management, it was decided to create a branch per layer to simplify the review process of the changes made in each task and to demonstrate a real-world project workflow. For this reason, the feature branches were not deleted after merging their changes into **develop**, allowing for a review of each branch's implemented changes.
 
-En un repositorio real, se crearía una rama por funcionalidad y cada una de estas ramas serían eliminadas al unir los cambios con **develop**.
+In a real repository, a branch would be created per functionality, and each of these branches would be deleted after merging with **develop**.
 
-## Tecnologías utilizadas
+## Technologies
 
-Para el desarrollo de la solución se ha seleccionado la versión de **Java 17**, pues, tras analizar las herramientas externas que iban a ser utilizadas para garantizar la calidad del código desarrollado, se encontró que es la versión más reciente de Java compatible con estas herramientas.
+The chosen **Java** version is **Java 17**, as it was found to be the most recent Java version compatible with the external tools used to ensure code quality.
 
-El framework seleccionado se trata de **SpringBoot 3.4.1** que aporta la infraestructura necesaria para desarrollar una aplicación de forma simple y eficaz, añadiendo el módulo **Spring Data JPA** para las consultas a base de datos y empleando **Maven** como herramienta de gestión y automatización de las dependencias del proyecto.
+The selected framework is **Spring Boot 3.4.1**, which provides the necessary infrastructure for developing an application in a simple and efficient way. Additionally, the **Spring Data JPA** module has been included for database queries, and Maven has been used for dependency management and project automation.
 
-Respecto a la base de datos, se ha seleccionado una base de datos en memoria **H2**, que permita almacenar toda la información que va a ser consultada en el proyecto y que se cargue al ejecutar el mismo.
+Regarding the database, an in-memory **H2 database** was selected to store all the information required for project queries, automatically loading upon execution.
 
-Por último, la herramienta seleccionada para el análisis de código ha sido **SonarCloud**, aportando seguridad sobre el código desarrollado.
+Finally, **SonarCloud** was chosen as the code analysis tool to ensure the security and quality of the developed code.
 
-## Arquitectura y patrones de diseño
+## Architecture and Design Patterns
 
-Para el desarrollo del proyecto se ha decidido implementar una arquitectura hexagonal, al ser la arquitectura propuesta para el desarrollo de la solución y ser una arquitectura conocida por el desarrollador.
+The project was developed using a hexagonal architecture, as it was the proposed architecture for the solution and is well known by the developer.
 
-Esta arquitectura se basa en el concepto de **puertos** y **adaptadores** y consiste en organizar el código de forma que se desarrolle un núcleo de la aplicación, desacoplado totalmente de la implementación del código y sin ningún tipo de dependencias, donde se definen interfaces abstractas (puertos) y una serie de capas externas (adaptadores) que dependen directamente del núcleo y donde se va a implementar las diferentes funcionalidades definidas en la lógica de negocio y las interacciones con aplicaciones externas (APIs, base de datos...).
+This architecture is based on the concept of **ports** and **adapters**, organizing the code in such a way that the core of the application is completely decoupled from implementation details and dependencies. It defines abstract interfaces (ports) and a series of external layers (adapters) that directly depend on the core. These adapters implement various business logic functionalities and manage interactions with external applications (APIs, databases, etc.).
 
-De esta forma, se consigue una aplicación donde la lógica de negocio fundamental está altamente desacoplada, otorgando una gran escalabilidad y flexibilidad ante cambios en el alcance.
+This approach results in an application where the essential business logic is highly decoupled, providing excellent scalability and flexibility in response to scope changes.
 
-El patrón de diseño seleccionado para el desarrollo ha sido el patrón **Adapter**, dado que es un tipo de patrón de diseño estructural que permite la colaboración entre objetos e interfaces que no son directamente compatibles.
+The chosen design pattern is the **Adapter** pattern, a structural pattern that enables collaboration between objects and interfaces that are not directly compatible.
 
-En el caso de la arquitectura hexagonal, sería el mecanismo encargado de conectar el núcleo de dominio con las implementaciones externas, siendo el medio que garantiza el desacople de este núcleo de negocio y resultando en la opción ideal para la arquitectura seleccionada.
+In the context of hexagonal architecture, the Adapter pattern acts as the mechanism connecting the domain core with external implementations, ensuring the decoupling of the business core and making it an ideal choice for the selected architecture.
 
-## Instalación y ejecución del proyecto
+## Project Installation and Execution
 
-## EndPoints del proyecto
+### Prerequisites:
+- **Java 17** and **Maven** must be installed on the system.
+- **Git** or a terminal supporting Git commands must be installed.
 
-## Acceso a la base de datos
+### Installation and Execution
+1. Run the following command in the directory where you want to clone the repository:
+```
+git clone https://github.com/carsantir99/PruebaBCNC.git
+```
+2. To compile the project, navigate to the **PruebaBCNC** directory in a terminal and execute:
+```
+mvn clean install
+```
+3. Finally, to run the project:
+```
+mvn spring-boot:run
+```
 
-La base de datos se inicializa automáticamente con los datos de ejemplo aportados en la definición de la prueba al iniciar la aplicación. Es posible acceder a la consola de H2 para inspeccionar los datos de la siguiente forma:
+## Project Endpoints
 
-1. Inicia la aplicación.
+### Price Query
+- EndPoint Path: /prices
+- HTTP Method: **GET**
+- Request parameters (all of them are mandatory):
+    - productId (Product Identifier). Example: 35455
+    - brandId (Brand Identifier). Example: 1
+    - date (Date when the rate should be retrieved, format: 'yyyy-MM-dd HH:mm:ss'). Example: '2020-06-15 00:00:00'.
 
-2. Accede a la consola de H2 en: http://localhost:9080/h2-console
+All input parameters are required. If any parameter is missing, the system will return a 400 Bad Request error.
 
-3. Usa las siguientes credenciales:
+Example request: GET http://localhost:**assigned-port(default: 9080)**/prices?productId=35455&brandId=1&date=2020-08-15 00:00:00.
+
+Example Response:
+```
+{
+    "productId": 35455,
+    "brandId": 1,
+    "priceList": 4,
+    "startDate": "2020-06-15T16:00:00",
+    "endDate": "2020-12-31T23:59:59",
+    "price": 38.95,
+    "currency": "EUR"
+}
+```
+
+## Database Access
+
+The database is automatically initialized with the sample data provided in the test definition when the application starts. The H2 console can be accessed to inspect the stored data:
+
+1. Start the application.
+
+2. Open the H2 console in a browser: http://localhost:**assigned-port(default: 9080)**/h2-console
+
+3. Use the following credentials:
 
     - JDBC URL: jdbc:h2:file:./pruebaBCNCDB
-    - Usuario: sa
-    - Contraseña: (vacío)
+    - User: sa
+    - Password: (empty)
 
-## Ejecución de tests y linter seleccionado
+## Running Tests and Selected Linter
+
+### Tests
+
+The project includes unit tests for each functionality and integration tests to validate interactions with the database and API endpoints.
+
+To execute the tests, open a terminal in the **PruebaBCNC** project directory and run:
+
+```
+mvn test
+```
+
+### Selected linter
+
+The chosen linter for code analysis is **SonarCloud** (https://sonarcloud.io/project/overview?id=carsantir99_PruebaBCNC). Each pull request in the repository includes interactions with this tool, displaying code coverage results.
+
+Since tasks were divided by layers of a single functionality, some pull requests may not have sufficient test coverage. In a real environment, the complete functionality would be developed before reviewing the alerts raised by **SonarCloud**, allowing them to be fixed before merging the code into **develop**.
+
+
