@@ -40,7 +40,7 @@ class PricesApplicationTests {
     	priceExpected.setPriceList(1);
     	priceExpected.setBrandId(1);
     	priceExpected.setProductId(35455);
-    	priceExpected.setPrice(35.50);
+    	priceExpected.setPriceValue(35.50);
     	priceExpected.setCurrency("EUR");
     }
 

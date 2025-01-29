@@ -8,7 +8,7 @@ public class Price {
 	private Integer priceList;
 	private LocalDateTime startDate;
 	private LocalDateTime endDate;
-	private Double price;
+	private Double priceValue;
 	private String currency;
 	
 	public Price() {
@@ -16,13 +16,13 @@ public class Price {
 	}
 	
 	public Price(Integer brandId, LocalDateTime startDate, LocalDateTime endDate, Integer priceList, Integer productId,
-			 Double price, String currency) {
+			 Double priceValue, String currency) {
 		this.brandId = brandId;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.priceList = priceList;
 		this.productId = productId;
-		this.price = price;
+		this.priceValue = priceValue;
 		this.currency = currency;
 	}
 
@@ -57,11 +57,11 @@ public class Price {
 		this.productId = productId;
 	}
 
-	public Double getPrice() {
-		return price;
+	public Double getPriceValue() {
+		return priceValue;
 	}
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setPriceValue(Double priceValue) {
+		this.priceValue = priceValue;
 	}
 	public String getCurrency() {
 		return currency;
