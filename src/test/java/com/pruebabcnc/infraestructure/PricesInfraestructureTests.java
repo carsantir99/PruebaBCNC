@@ -57,7 +57,7 @@ class PricesInfraestructureTests {
 
     	Price price = pricesRepositoryImpl.findPriceByProductIdBrandIdAndDate(35455, 1, LocalDateTime.parse("2020-08-15 00:00:00",formatter));
         assertNotNull(price);
-    	assertEquals(priceEntities.get(0).getProductId(),price.getProductId());
+    	assertEquals(priceEntities.get(0).getProductId(),price.getProduct());
     }
 
     @Test

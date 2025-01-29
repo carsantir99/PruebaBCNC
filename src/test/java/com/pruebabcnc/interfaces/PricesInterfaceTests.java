@@ -23,7 +23,7 @@ class PricesInterfaceTests {
                 .param("brandId", "1")
                 .param("date", "2020-06-14 10:00:00"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.priceList").value(1))
+                .andExpect(jsonPath("$.rateNumber").value(1))
                 .andExpect(jsonPath("$.priceValue").value(35.50));
     }
     
@@ -34,7 +34,7 @@ class PricesInterfaceTests {
                 .param("brandId", "1")
                 .param("date", "2020-06-14 16:00:00"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.priceList").value(2))
+                .andExpect(jsonPath("$.rateNumber").value(2))
                 .andExpect(jsonPath("$.priceValue").value(25.45));
     }
     
@@ -45,7 +45,7 @@ class PricesInterfaceTests {
                 .param("brandId", "1")
                 .param("date", "2020-06-14 21:00:00"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.priceList").value(1))
+                .andExpect(jsonPath("$.rateNumber").value(1))
                 .andExpect(jsonPath("$.priceValue").value(35.50));
     }
     
@@ -56,7 +56,7 @@ class PricesInterfaceTests {
                 .param("brandId", "1")
                 .param("date", "2020-06-15 10:00:00"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.priceList").value(3))
+                .andExpect(jsonPath("$.rateNumber").value(3))
                 .andExpect(jsonPath("$.priceValue").value(30.50));
     }
     
@@ -67,7 +67,7 @@ class PricesInterfaceTests {
                 .param("brandId", "1")
                 .param("date", "2020-06-16 21:00:00"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.priceList").value(4))
+                .andExpect(jsonPath("$.rateNumber").value(4))
                 .andExpect(jsonPath("$.priceValue").value(38.95));
     }
     

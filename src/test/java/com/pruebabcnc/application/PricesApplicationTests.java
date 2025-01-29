@@ -37,9 +37,9 @@ class PricesApplicationTests {
     	priceExpected = new Price();
     	priceExpected.setStartDate(LocalDateTime.of(2020, 6, 14, 0, 0));
     	priceExpected.setEndDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59));
-    	priceExpected.setPriceList(1);
-    	priceExpected.setBrandId(1);
-    	priceExpected.setProductId(35455);
+    	priceExpected.setRateNumber(1);
+    	priceExpected.setBrand(1);
+    	priceExpected.setProduct(35455);
     	priceExpected.setPriceValue(35.50);
     	priceExpected.setCurrency("EUR");
     }
@@ -50,7 +50,7 @@ class PricesApplicationTests {
 
     	Price price = getPriceByProductIdBrandIdAndDateUseCase.getPriceByProductIdBrandIdAndDate(35455, 1, "2020-07-10 00:00:00");
         assertNotNull(price);
-    	assertEquals(priceExpected.getProductId(),price.getProductId());
+    	assertEquals(priceExpected.getProduct(),price.getProduct());
     }
 
     @Test
