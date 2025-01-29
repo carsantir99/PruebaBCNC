@@ -3,9 +3,9 @@ package com.pruebabcnc.domain.model;
 import java.time.LocalDateTime;
 
 public class Price {
-	private Integer productId;
-	private Integer brandId;
-	private Integer priceList;
+	private Integer product;
+	private Integer brand;
+	private Integer rateNumber;
 	private LocalDateTime startDate;
 	private LocalDateTime endDate;
 	private Double priceValue;
@@ -15,60 +15,74 @@ public class Price {
 		
 	}
 	
-	public Price(Integer brandId, LocalDateTime startDate, LocalDateTime endDate, Integer priceList, Integer productId,
+	public Price(Integer brand, LocalDateTime startDate, LocalDateTime endDate, Integer rateNumber, Integer product,
 			 Double priceValue, String currency) {
-		this.brandId = brandId;
+		this.brand = brand;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.priceList = priceList;
-		this.productId = productId;
+		this.rateNumber = rateNumber;
+		this.product = product;
 		this.priceValue = priceValue;
 		this.currency = currency;
 	}
 
-	public Integer getBrandId() {
-		return brandId;
+	public Integer getProduct() {
+		return product;
 	}
-	public void setBrandId(Integer brandId) {
-		this.brandId = brandId;
+
+	public void setProduct(Integer product) {
+		this.product = product;
 	}
+
+	public Integer getBrand() {
+		return brand;
+	}
+
+	public void setBrand(Integer brand) {
+		this.brand = brand;
+	}
+
+	public Integer getRateNumber() {
+		return rateNumber;
+	}
+
+	public void setRateNumber(Integer rateNumber) {
+		this.rateNumber = rateNumber;
+	}
+
 	public LocalDateTime getStartDate() {
 		return startDate;
 	}
+
 	public void setStartDate(LocalDateTime startDate) {
 		this.startDate = startDate;
 	}
+
 	public LocalDateTime getEndDate() {
 		return endDate;
 	}
+
 	public void setEndDate(LocalDateTime endDate) {
 		this.endDate = endDate;
-	}
-	public Integer getPriceList() {
-		return priceList;
-	}
-	public void setPriceList(Integer priceList) {
-		this.priceList = priceList;
-	}
-	public Integer getProductId() {
-		return productId;
-	}
-	public void setProductId(Integer productId) {
-		this.productId = productId;
 	}
 
 	public Double getPriceValue() {
 		return priceValue;
 	}
+
 	public void setPriceValue(Double priceValue) {
 		this.priceValue = priceValue;
 	}
+
 	public String getCurrency() {
 		return currency;
 	}
+
 	public void setCurrency(String currency) {
 		this.currency = currency;
 	}
+	
+	
 	
 	
 }
