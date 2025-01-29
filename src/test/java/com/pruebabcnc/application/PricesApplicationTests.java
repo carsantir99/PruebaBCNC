@@ -55,7 +55,12 @@ class PricesApplicationTests {
 
     @Test
     void testGetPriceByProductIdBrandIdAndDateIncorrectDateFormat() throws DateParserException {
-        assertThrows(DateParserException.class,() -> getPriceByProductIdBrandIdAndDateUseCase.getPriceByProductIdBrandIdAndDate(35456, 1, "15-08-2020 00:00:00"));
+        assertThrows(DateParserException.class,() -> getPriceByProductIdBrandIdAndDateUseCase.getPriceByProductIdBrandIdAndDate(35455, 1, "15-08-2020 00:00:00"));
+    }
+    
+    @Test
+    void testGetPriceByProductIdBrandIdAndDateNotFound() throws NotFoundException {
+        assertThrows(NotFoundException.class,() -> getPriceByProductIdBrandIdAndDateUseCase.getPriceByProductIdBrandIdAndDate(35456, 1, "2020-08-15 00:00:00"));
     }
     
 }
