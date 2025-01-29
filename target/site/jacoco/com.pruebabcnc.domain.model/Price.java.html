@@ -3,80 +3,72 @@
 import java.time.LocalDateTime;
 
 public class Price {
+	private Integer productId;
 	private Integer brandId;
+	private Integer priceList;
 	private LocalDateTime startDate;
 	private LocalDateTime endDate;
-	private Integer priceList;
-	private Integer productId;
-	private Integer priority;
 	private Double price;
 	private String currency;
 	
-	
-<span class="nc" id="L16">	public Price() {</span>
+<span class="fc" id="L14">	public Price() {</span>
 		
-<span class="nc" id="L18">	}</span>
+<span class="fc" id="L16">	}</span>
 	
 	public Price(Integer brandId, LocalDateTime startDate, LocalDateTime endDate, Integer priceList, Integer productId,
-<span class="fc" id="L21">			Integer priority, Double price, String currency) {</span>
-<span class="fc" id="L22">		this.brandId = brandId;</span>
-<span class="fc" id="L23">		this.startDate = startDate;</span>
-<span class="fc" id="L24">		this.endDate = endDate;</span>
-<span class="fc" id="L25">		this.priceList = priceList;</span>
-<span class="fc" id="L26">		this.productId = productId;</span>
-<span class="fc" id="L27">		this.priority = priority;</span>
-<span class="fc" id="L28">		this.price = price;</span>
-<span class="fc" id="L29">		this.currency = currency;</span>
-<span class="fc" id="L30">	}</span>
+<span class="fc" id="L19">			 Double price, String currency) {</span>
+<span class="fc" id="L20">		this.brandId = brandId;</span>
+<span class="fc" id="L21">		this.startDate = startDate;</span>
+<span class="fc" id="L22">		this.endDate = endDate;</span>
+<span class="fc" id="L23">		this.priceList = priceList;</span>
+<span class="fc" id="L24">		this.productId = productId;</span>
+<span class="fc" id="L25">		this.price = price;</span>
+<span class="fc" id="L26">		this.currency = currency;</span>
+<span class="fc" id="L27">	}</span>
 
 	public Integer getBrandId() {
-<span class="nc" id="L33">		return brandId;</span>
+<span class="fc" id="L30">		return brandId;</span>
 	}
 	public void setBrandId(Integer brandId) {
-<span class="nc" id="L36">		this.brandId = brandId;</span>
-<span class="nc" id="L37">	}</span>
+<span class="fc" id="L33">		this.brandId = brandId;</span>
+<span class="fc" id="L34">	}</span>
 	public LocalDateTime getStartDate() {
-<span class="nc" id="L39">		return startDate;</span>
+<span class="fc" id="L36">		return startDate;</span>
 	}
 	public void setStartDate(LocalDateTime startDate) {
-<span class="nc" id="L42">		this.startDate = startDate;</span>
-<span class="nc" id="L43">	}</span>
+<span class="fc" id="L39">		this.startDate = startDate;</span>
+<span class="fc" id="L40">	}</span>
 	public LocalDateTime getEndDate() {
-<span class="nc" id="L45">		return endDate;</span>
+<span class="fc" id="L42">		return endDate;</span>
 	}
 	public void setEndDate(LocalDateTime endDate) {
-<span class="nc" id="L48">		this.endDate = endDate;</span>
-<span class="nc" id="L49">	}</span>
+<span class="fc" id="L45">		this.endDate = endDate;</span>
+<span class="fc" id="L46">	}</span>
 	public Integer getPriceList() {
-<span class="nc" id="L51">		return priceList;</span>
+<span class="fc" id="L48">		return priceList;</span>
 	}
 	public void setPriceList(Integer priceList) {
-<span class="nc" id="L54">		this.priceList = priceList;</span>
-<span class="nc" id="L55">	}</span>
+<span class="fc" id="L51">		this.priceList = priceList;</span>
+<span class="fc" id="L52">	}</span>
 	public Integer getProductId() {
-<span class="fc" id="L57">		return productId;</span>
+<span class="fc" id="L54">		return productId;</span>
 	}
 	public void setProductId(Integer productId) {
-<span class="nc" id="L60">		this.productId = productId;</span>
-<span class="nc" id="L61">	}</span>
-	public Integer getPriority() {
-<span class="nc" id="L63">		return priority;</span>
-	}
-	public void setPriority(Integer priority) {
-<span class="nc" id="L66">		this.priority = priority;</span>
-<span class="nc" id="L67">	}</span>
+<span class="fc" id="L57">		this.productId = productId;</span>
+<span class="fc" id="L58">	}</span>
+
 	public Double getPrice() {
-<span class="nc" id="L69">		return price;</span>
+<span class="fc" id="L61">		return price;</span>
 	}
 	public void setPrice(Double price) {
-<span class="nc" id="L72">		this.price = price;</span>
-<span class="nc" id="L73">	}</span>
+<span class="fc" id="L64">		this.price = price;</span>
+<span class="fc" id="L65">	}</span>
 	public String getCurrency() {
-<span class="nc" id="L75">		return currency;</span>
+<span class="fc" id="L67">		return currency;</span>
 	}
 	public void setCurrency(String currency) {
-<span class="nc" id="L78">		this.currency = currency;</span>
-<span class="nc" id="L79">	}</span>
+<span class="fc" id="L70">		this.currency = currency;</span>
+<span class="fc" id="L71">	}</span>
 	
 	
 }

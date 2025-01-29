@@ -6,7 +6,7 @@ target/maven-archiver
 target/maven-status
 target/surefire-reports
 target/test-classes
-target/PruebaBCNC-0.0.1-SNAPSHOT
+target/PruebaBCNC-0.0.1-SNAPSHOT.jar
 target/PruebaBCNC-0.0.1-SNAPSHOT.jar.original
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/

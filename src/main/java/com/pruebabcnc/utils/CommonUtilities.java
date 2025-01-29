@@ -13,7 +13,7 @@ public class CommonUtilities {
 		try {
 			return LocalDateTime.parse(date, formatter);
 		}catch(Exception e) {
-			throw new DateParserException("La fecha introducida posee un formato incorrecto. Debe usar el formato yyyy-MM-dd HH:mm:ss");
+			throw new DateParserException("Incorrect date format. Dates must use the yyyy-MM-dd HH:mm:ss format");
 		}
 	}
 }

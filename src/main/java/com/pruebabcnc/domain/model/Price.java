@@ -3,28 +3,25 @@ package com.pruebabcnc.domain.model;
 import java.time.LocalDateTime;
 
 public class Price {
+	private Integer productId;
 	private Integer brandId;
+	private Integer priceList;
 	private LocalDateTime startDate;
 	private LocalDateTime endDate;
-	private Integer priceList;
-	private Integer productId;
-	private Integer priority;
 	private Double price;
 	private String currency;
-	
 	
 	public Price() {
 		
 	}
 	
 	public Price(Integer brandId, LocalDateTime startDate, LocalDateTime endDate, Integer priceList, Integer productId,
-			Integer priority, Double price, String currency) {
+			 Double price, String currency) {
 		this.brandId = brandId;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.priceList = priceList;
 		this.productId = productId;
-		this.priority = priority;
 		this.price = price;
 		this.currency = currency;
 	}
@@ -59,12 +56,7 @@ public class Price {
 	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
-	public Integer getPriority() {
-		return priority;
-	}
-	public void setPriority(Integer priority) {
-		this.priority = priority;
-	}
+
 	public Double getPrice() {
 		return price;
 	}
