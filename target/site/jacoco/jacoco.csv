@@ -1,0 +1,11 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+PruebaBCNC,com.pruebabcnc.infraestructure.entities,PriceEntity,3,56,0,0,1,24,1,16,1,16
+PruebaBCNC,com.pruebabcnc.interfaces,PriceController,0,13,0,0,0,4,0,2,0,2
+PruebaBCNC,com.pruebabcnc.application.usecases,GetPriceByProductIdBrandIdAndDateUseCase,0,24,0,2,0,7,0,3,0,2
+PruebaBCNC,com.pruebabcnc.domain.model,Price,0,76,0,0,0,32,0,16,0,16
+PruebaBCNC,com.pruebabcnc.infraestructure.utils,PriceMapper,0,21,0,0,0,9,0,2,0,2
+PruebaBCNC,com.pruebabcnc.exceptions,DateParserException,0,4,0,0,0,2,0,1,0,1
+PruebaBCNC,com.pruebabcnc.exceptions,NotFoundException,0,4,0,0,0,2,0,1,0,1
+PruebaBCNC,com.pruebabcnc.infraestructure.repositories,PricesRepositoryImpl,0,36,0,2,0,8,0,3,0,2
+PruebaBCNC,com.pruebabcnc,PruebaBcncApplication,5,3,0,0,2,1,1,1,1,1
+PruebaBCNC,com.pruebabcnc.utils,CommonUtilities,3,13,0,0,1,4,1,1,1,1

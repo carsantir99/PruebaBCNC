@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PriceEntity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PruebaBCNC</a> &gt; <a href="index.source.html" class="el_package">com.pruebabcnc.infraestructure.entities</a> &gt; <span class="el_source">PriceEntity.java</span></div><h1>PriceEntity.java</h1><pre class="source lang-java linenums">package com.pruebabcnc.infraestructure.entities;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = &quot;PRICES&quot;)
+<span class="fc" id="L12">public class PriceEntity {</span>
+	@Id
+    @Column(name = &quot;price_list&quot;)
+    private Integer priceList;
+    
+    @Column(name = &quot;brand_id&quot;)
+    private Integer brandId;
+
+    @Column(name = &quot;start_date&quot;)
+    private LocalDateTime startDate;
+
+    @Column(name = &quot;end_date&quot;)
+    private LocalDateTime endDate;
+
+    @Column(name = &quot;product_id&quot;)
+    private Integer productId;
+
+    @Column(name = &quot;priority&quot;)
+    private Integer priority;
+
+    @Column(name = &quot;price&quot;)
+    private Double price;
+
+    @Column(name = &quot;currency&quot;)
+    private String currency;
+
+	public Integer getBrandId() {
+<span class="fc" id="L39">		return brandId;</span>
+	}
+
+	public void setBrandId(Integer brandId) {
+<span class="fc" id="L43">		this.brandId = brandId;</span>
+<span class="fc" id="L44">	}</span>
+
+	public LocalDateTime getStartDate() {
+<span class="fc" id="L47">		return startDate;</span>
+	}
+
+	public void setStartDate(LocalDateTime startDate) {
+<span class="fc" id="L51">		this.startDate = startDate;</span>
+<span class="fc" id="L52">	}</span>
+
+	public LocalDateTime getEndDate() {
+<span class="fc" id="L55">		return endDate;</span>
+	}
+
+	public void setEndDate(LocalDateTime endDate) {
+<span class="fc" id="L59">		this.endDate = endDate;</span>
+<span class="fc" id="L60">	}</span>
+
+	public Integer getPriceList() {
+<span class="fc" id="L63">		return priceList;</span>
+	}
+
+	public void setPriceList(Integer priceList) {
+<span class="fc" id="L67">		this.priceList = priceList;</span>
+<span class="fc" id="L68">	}</span>
+
+	public Integer getProductId() {
+<span class="fc" id="L71">		return productId;</span>
+	}
+
+	public void setProductId(Integer productId) {
+<span class="fc" id="L75">		this.productId = productId;</span>
+<span class="fc" id="L76">	}</span>
+
+	public Integer getPriority() {
+<span class="nc" id="L79">		return priority;</span>
+	}
+
+	public void setPriority(Integer priority) {
+<span class="fc" id="L83">		this.priority = priority;</span>
+<span class="fc" id="L84">	}</span>
+
+	public Double getPrice() {
+<span class="fc" id="L87">		return price;</span>
+	}
+
+	public void setPrice(Double price) {
+<span class="fc" id="L91">		this.price = price;</span>
+<span class="fc" id="L92">	}</span>
+
+	public String getCurrency() {
+<span class="fc" id="L95">		return currency;</span>
+	}
+
+	public void setCurrency(String currency) {
+<span class="fc" id="L99">		this.currency = currency;</span>
+<span class="fc" id="L100">	}</span>
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
