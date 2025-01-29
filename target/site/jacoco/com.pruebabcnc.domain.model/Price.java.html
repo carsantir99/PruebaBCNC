@@ -8,21 +8,21 @@ public class Price {
 	private Integer priceList;
 	private LocalDateTime startDate;
 	private LocalDateTime endDate;
-	private Double price;
+	private Double priceValue;
 	private String currency;
 	
 <span class="fc" id="L14">	public Price() {</span>
 		
 <span class="fc" id="L16">	}</span>
 	
-	public Price(Integer brandId, LocalDateTime startDate, LocalDateTime endDate, Integer priceList, Integer productId,
-<span class="fc" id="L19">			 Double price, String currency) {</span>
+<span class="fc" id="L18">	public Price(Integer brandId, LocalDateTime startDate, LocalDateTime endDate, Integer priceList, Integer productId,</span>
+			 Double priceValue, String currency) {
 <span class="fc" id="L20">		this.brandId = brandId;</span>
 <span class="fc" id="L21">		this.startDate = startDate;</span>
 <span class="fc" id="L22">		this.endDate = endDate;</span>
 <span class="fc" id="L23">		this.priceList = priceList;</span>
 <span class="fc" id="L24">		this.productId = productId;</span>
-<span class="fc" id="L25">		this.price = price;</span>
+<span class="fc" id="L25">		this.priceValue = priceValue;</span>
 <span class="fc" id="L26">		this.currency = currency;</span>
 <span class="fc" id="L27">	}</span>
 
@@ -57,11 +57,11 @@ public class Price {
 <span class="fc" id="L57">		this.productId = productId;</span>
 <span class="fc" id="L58">	}</span>
 
-	public Double getPrice() {
-<span class="fc" id="L61">		return price;</span>
+	public Double getPriceValue() {
+<span class="fc" id="L61">		return priceValue;</span>
 	}
-	public void setPrice(Double price) {
-<span class="fc" id="L64">		this.price = price;</span>
+	public void setPriceValue(Double priceValue) {
+<span class="fc" id="L64">		this.priceValue = priceValue;</span>
 <span class="fc" id="L65">	}</span>
 	public String getCurrency() {
 <span class="fc" id="L67">		return currency;</span>
