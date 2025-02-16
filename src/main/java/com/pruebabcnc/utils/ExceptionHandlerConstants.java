@@ -8,4 +8,8 @@ public class ExceptionHandlerConstants {
 	
 	public static final String ERROR_TYPE_BAD_REQUEST = "Bad Request";
 	public static final String ERROR_TYPE_NOT_FOUND = "Not Found";
+	
+	private ExceptionHandlerConstants() {
+		
+	}
 }
