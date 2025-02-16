@@ -2,73 +2,40 @@
 
 import java.time.LocalDateTime;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Price {
-	private Integer productId;
-	private Integer brandId;
-	private Integer priceList;
+	private Integer product;
+	private Integer brand;
+	private Integer rateNumber;
 	private LocalDateTime startDate;
 	private LocalDateTime endDate;
 	private Double priceValue;
 	private String currency;
+	private Integer priority;
 	
-<span class="fc" id="L14">	public Price() {</span>
+<span class="fc" id="L20">	public Price() {</span>
 		
-<span class="fc" id="L16">	}</span>
+<span class="fc" id="L22">	}</span>
 	
-<span class="fc" id="L18">	public Price(Integer brandId, LocalDateTime startDate, LocalDateTime endDate, Integer priceList, Integer productId,</span>
-			 Double priceValue, String currency) {
-<span class="fc" id="L20">		this.brandId = brandId;</span>
-<span class="fc" id="L21">		this.startDate = startDate;</span>
-<span class="fc" id="L22">		this.endDate = endDate;</span>
-<span class="fc" id="L23">		this.priceList = priceList;</span>
-<span class="fc" id="L24">		this.productId = productId;</span>
-<span class="fc" id="L25">		this.priceValue = priceValue;</span>
-<span class="fc" id="L26">		this.currency = currency;</span>
-<span class="fc" id="L27">	}</span>
-
-	public Integer getBrandId() {
-<span class="fc" id="L30">		return brandId;</span>
-	}
-	public void setBrandId(Integer brandId) {
-<span class="fc" id="L33">		this.brandId = brandId;</span>
+	public Price(Integer brand, LocalDateTime startDate, LocalDateTime endDate, Integer rateNumber, Integer product,
+<span class="fc" id="L25">			 Double priceValue, String currency, Integer priority) {</span>
+<span class="fc" id="L26">		this.brand = brand;</span>
+<span class="fc" id="L27">		this.startDate = startDate;</span>
+<span class="fc" id="L28">		this.endDate = endDate;</span>
+<span class="fc" id="L29">		this.rateNumber = rateNumber;</span>
+<span class="fc" id="L30">		this.product = product;</span>
+<span class="fc" id="L31">		this.priceValue = priceValue;</span>
+<span class="fc" id="L32">		this.currency = currency;</span>
+<span class="fc" id="L33">		this.priority= priority;</span>
 <span class="fc" id="L34">	}</span>
-	public LocalDateTime getStartDate() {
-<span class="fc" id="L36">		return startDate;</span>
-	}
-	public void setStartDate(LocalDateTime startDate) {
-<span class="fc" id="L39">		this.startDate = startDate;</span>
-<span class="fc" id="L40">	}</span>
-	public LocalDateTime getEndDate() {
-<span class="fc" id="L42">		return endDate;</span>
-	}
-	public void setEndDate(LocalDateTime endDate) {
-<span class="fc" id="L45">		this.endDate = endDate;</span>
-<span class="fc" id="L46">	}</span>
-	public Integer getPriceList() {
-<span class="fc" id="L48">		return priceList;</span>
-	}
-	public void setPriceList(Integer priceList) {
-<span class="fc" id="L51">		this.priceList = priceList;</span>
-<span class="fc" id="L52">	}</span>
-	public Integer getProductId() {
-<span class="fc" id="L54">		return productId;</span>
-	}
-	public void setProductId(Integer productId) {
-<span class="fc" id="L57">		this.productId = productId;</span>
-<span class="fc" id="L58">	}</span>
 
-	public Double getPriceValue() {
-<span class="fc" id="L61">		return priceValue;</span>
-	}
-	public void setPriceValue(Double priceValue) {
-<span class="fc" id="L64">		this.priceValue = priceValue;</span>
-<span class="fc" id="L65">	}</span>
-	public String getCurrency() {
-<span class="fc" id="L67">		return currency;</span>
-	}
-	public void setCurrency(String currency) {
-<span class="fc" id="L70">		this.currency = currency;</span>
-<span class="fc" id="L71">	}</span>
+
+	
+	
 	
 	
 }

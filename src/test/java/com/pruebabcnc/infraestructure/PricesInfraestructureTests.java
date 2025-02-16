@@ -5,9 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -32,12 +29,11 @@ class PricesInfraestructureTests {
     
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(CommonUtilities.YYYY_MM_DD_HH_MM_SS_HYPHEN_SEPARATOR);
 
-    private List<PriceEntity> priceEntities;
+    private PriceEntity priceEntity;
 
     @BeforeEach
     void setUp() {
-    	priceEntities = new ArrayList<PriceEntity>(1);
-    	PriceEntity priceEntity = new PriceEntity();
+    	priceEntity = new PriceEntity();
     	priceEntity.setBrandId(1);
     	priceEntity.setStartDate(LocalDateTime.of(2020, 6, 14, 0, 0));
     	priceEntity.setEndDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59));
@@ -46,24 +42,22 @@ class PricesInfraestructureTests {
     	priceEntity.setPriority(0);
     	priceEntity.setPrice(35.50);
     	priceEntity.setCurrency("EUR");
-    	
-    	priceEntities.add(priceEntity);
     }
 
     @Test
     void testFindPriceByProductIdBrandIdAndDate() {
         Mockito.when(jpaPricesRepository.findPriceByProductIdBrandIdAndDate(35455, 1, LocalDateTime.parse("2020-08-15 00:00:00", formatter)))
-        .thenReturn(priceEntities);
+        .thenReturn(priceEntity);
 
     	Price price = pricesRepositoryImpl.findPriceByProductIdBrandIdAndDate(35455, 1, LocalDateTime.parse("2020-08-15 00:00:00",formatter));
         assertNotNull(price);
-    	assertEquals(priceEntities.get(0).getProductId(),price.getProduct());
+    	assertEquals(priceEntity.getProductId(),price.getProduct());
     }
 
     @Test
     void testFindPriceByProductIdBrandIdAndDateNotFound() {
         Mockito.when(jpaPricesRepository.findPriceByProductIdBrandIdAndDate(35456, 1, LocalDateTime.parse("2020-08-15 00:00:00", formatter)))
-        .thenReturn(new ArrayList<PriceEntity>(0));
+        .thenReturn(null);
         
     	Price price = pricesRepositoryImpl.findPriceByProductIdBrandIdAndDate(35456, 1, LocalDateTime.parse("2020-08-15 00:00:00",formatter));
         assertNull(price);
