@@ -15,7 +15,8 @@ public class PriceMapper {
             priceEntity.getPriceList(),
             priceEntity.getProductId(),
             priceEntity.getPrice(),
-            priceEntity.getCurrency()
+            priceEntity.getCurrency(),
+            priceEntity.getPriority()
         );
     } 
 }
