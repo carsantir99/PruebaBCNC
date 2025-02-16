@@ -1,10 +1,10 @@
 package com.pruebabcnc.infraestructure;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,12 +36,12 @@ class JpaRepositoryTests {
     }
     @Test
     void testFindPriceByProductIdBrandIdAndDateFoundInDataBase() {
-    	List<PriceEntity> priceEntityFound = jpaPricesRepository.findPriceByProductIdBrandIdAndDate(35455, 1, LocalDateTime.parse("2020-08-15 00:00:00",formatter));
-        assertEquals(1,priceEntityFound.size());
+    	PriceEntity priceEntityFound = jpaPricesRepository.findPriceByProductIdBrandIdAndDate(35455, 1, LocalDateTime.parse("2020-08-15 00:00:00",formatter));
+        assertNotNull(priceEntityFound);
     }
     @Test
     void testFindPriceByProductIdBrandIdAndDateNotFoundInDatabase() {
-    	List<PriceEntity> priceEntityFound = jpaPricesRepository.findPriceByProductIdBrandIdAndDate(35456, 1, LocalDateTime.parse("2020-08-15 00:00:00",formatter));
-        assertEquals(0,priceEntityFound.size());
+    	PriceEntity priceEntityNotFound = jpaPricesRepository.findPriceByProductIdBrandIdAndDate(35456, 1, LocalDateTime.parse("2020-08-15 00:00:00",formatter));
+        assertNull(priceEntityNotFound);
     }
 }

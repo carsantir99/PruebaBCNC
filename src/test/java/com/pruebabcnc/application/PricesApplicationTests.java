@@ -14,6 +14,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.pruebabcnc.application.dto.PriceDTO;
 import com.pruebabcnc.application.usecases.GetPriceByProductIdBrandIdAndDateUseCase;
 import com.pruebabcnc.domain.model.Price;
 import com.pruebabcnc.domain.repository.PricesRepository;
@@ -48,9 +49,9 @@ class PricesApplicationTests {
     void testGetPriceByProductIdBrandIdAndDateCorrectDateFormat() throws DateParserException, NotFoundException {
         Mockito.when(pricesRepository.findPriceByProductIdBrandIdAndDate(35455, 1, LocalDateTime.parse("2020-07-10 00:00:00",formatter))).thenReturn(priceExpected);
 
-    	Price price = getPriceByProductIdBrandIdAndDateUseCase.getPriceByProductIdBrandIdAndDate(35455, 1, "2020-07-10 00:00:00");
-        assertNotNull(price);
-    	assertEquals(priceExpected.getProduct(),price.getProduct());
+    	PriceDTO priceDTO = getPriceByProductIdBrandIdAndDateUseCase.getPriceByProductIdBrandIdAndDate(35455, 1, "2020-07-10 00:00:00");
+        assertNotNull(priceDTO);
+    	assertEquals(priceExpected.getProduct(),priceDTO.getProductId());
     }
 
     @Test
