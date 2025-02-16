@@ -15,7 +15,7 @@ import com.pruebabcnc.exceptions.NotFoundException;
 import com.pruebabcnc.utils.ExceptionHandlerConstants;
 
 @SpringBootTest
-public class PriceExceptionHandlerControllerTests {
+class PriceExceptionHandlerControllerTests {
 
 	private PriceExceptionHandlerController controller = new PriceExceptionHandlerController();
 
