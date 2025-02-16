@@ -13,16 +13,18 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 
 import com.pruebabcnc.exceptions.DateParserException;
 import com.pruebabcnc.exceptions.NotFoundException;
+import com.pruebabcnc.utils.ExceptionHandlerConstants;
 
 @RestControllerAdvice
 public class PriceExceptionHandlerController {
+
     @ExceptionHandler(DateParserException.class)
     public ResponseEntity<Map<String, Object>> handleDateParserException(DateParserException ex) {
         Map<String, Object> response = new HashMap<>();
-        response.put("error", "Bad Request");
-        response.put("message", ex.getMessage());
-        response.put("timestamp", LocalDateTime.now());
-        response.put("status", HttpStatus.BAD_REQUEST.value());
+        response.put(ExceptionHandlerConstants.ERROR, ExceptionHandlerConstants.ERROR_TYPE_BAD_REQUEST);
+        response.put(ExceptionHandlerConstants.MESSAGE, ex.getMessage());
+        response.put(ExceptionHandlerConstants.TIMESTAMP, LocalDateTime.now());
+        response.put(ExceptionHandlerConstants.STATUS, HttpStatus.BAD_REQUEST.value());
 
         return ResponseEntity.badRequest().body(response);
     }
@@ -30,10 +32,10 @@ public class PriceExceptionHandlerController {
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<Map<String, Object>> handleNotFoundException(NotFoundException ex) {
         Map<String, Object> response = new HashMap<>();
-        response.put("error", "Not Found");
-        response.put("message", ex.getMessage());
-        response.put("timestamp", LocalDateTime.now());
-        response.put("status", HttpStatus.NOT_FOUND.value());
+        response.put(ExceptionHandlerConstants.ERROR, ExceptionHandlerConstants.ERROR_TYPE_NOT_FOUND);
+        response.put(ExceptionHandlerConstants.MESSAGE, ex.getMessage());
+        response.put(ExceptionHandlerConstants.TIMESTAMP, LocalDateTime.now());
+        response.put(ExceptionHandlerConstants.STATUS, HttpStatus.NOT_FOUND.value());
 
         return ResponseEntity.badRequest().body(response);
     }
@@ -41,9 +43,9 @@ public class PriceExceptionHandlerController {
     @ExceptionHandler(MissingServletRequestParameterException.class)
     public ResponseEntity<Map<String, Object>> handleMissingServletRequestParameterException(MissingServletRequestParameterException ex) {
         Map<String, Object> response = new HashMap<>();
-        response.put("error", "Bad Request");
-        response.put("message", "Required request parameter: '"+ex.getParameterName()+"' not provided.");
-        response.put("timestamp", LocalDateTime.now());
+        response.put(ExceptionHandlerConstants.ERROR, ExceptionHandlerConstants.ERROR_TYPE_BAD_REQUEST);
+        response.put(ExceptionHandlerConstants.MESSAGE, "Required request parameter: '"+ex.getParameterName()+"' not provided.");
+        response.put(ExceptionHandlerConstants.TIMESTAMP, LocalDateTime.now());
         response.put("status", HttpStatus.BAD_REQUEST.value());
 
         return ResponseEntity.badRequest().body(response);
@@ -52,10 +54,10 @@ public class PriceExceptionHandlerController {
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<Map<String, Object>> handleTypeMismatchException(MethodArgumentTypeMismatchException ex) {
         Map<String, Object> response = new HashMap<>();
-        response.put("error", "Bad Request");
-        response.put("message", "The parameter: '"+ex.getPropertyName()+"' has an incorrect type.");
-        response.put("timestamp", LocalDateTime.now());
-        response.put("status", HttpStatus.BAD_REQUEST.value());
+        response.put(ExceptionHandlerConstants.ERROR, ExceptionHandlerConstants.ERROR_TYPE_BAD_REQUEST);
+        response.put(ExceptionHandlerConstants.MESSAGE, "The parameter: '"+ex.getPropertyName()+"' has an incorrect type.");
+        response.put(ExceptionHandlerConstants.TIMESTAMP, LocalDateTime.now());
+        response.put(ExceptionHandlerConstants.STATUS, HttpStatus.BAD_REQUEST.value());
 
         return ResponseEntity.badRequest().body(response);
     }
