@@ -1,5 +1,6 @@
 package com.pruebabcnc.interfaces;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +19,8 @@ public class PriceController {
     }
 
     @GetMapping("/prices")
-    public PriceDTO getPrice(
+    public ResponseEntity<PriceDTO> getPrice(
             @RequestParam Integer productId,@RequestParam Integer brandId,@RequestParam String date) throws DateParserException, NotFoundException {
-        return useCase.getPriceByProductIdBrandIdAndDate(productId, brandId, date);
+        return ResponseEntity.ok(useCase.getPriceByProductIdBrandIdAndDate(productId, brandId, date));
     }
 }
